@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://l7bkl1gfzc.execute-api.sa-east-1.amazonaws.com/prod",
   "dependencies": {
+    "axios": "^0.21.1",
     "koa": "^2.11.0",
     "koa-route": "^3.2.0",
     "koa-router": "^8.0.6",
@@ -60,6 +61,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/axios": "^0.14.0",
     "@types/jest": "^24.0.0",
     "@types/koa-route": "^3.2.4",
     "@types/koa-static": "^4.0.1",

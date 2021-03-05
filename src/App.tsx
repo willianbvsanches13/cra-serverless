@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Route, Switch,  } from 'react-router'
-import { useLocation } from 'react-router-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 
-import { Details } from './pages/Details'
+import Frases from './pages/Frases'
+import Gif from './pages/Gif'
 import { NotFound } from './pages/Error'
 import { Home } from './pages/Home'
 
-import { Footer } from './components/Footer'
+// import { Footer } from './components/Footer'
 import { Navigation } from './components/Navigation'
 
 const GlobalStyles = createGlobalStyle`
@@ -28,18 +28,11 @@ const Wrapper = styled.div`
 `
 
 const App: React.FC = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.log('env', process.env, location.pathname);
-  }, [location.pathname]);
-
   return (
     <>
       <GlobalStyles />
 
       <Helmet>
-        {console.log('env react', process.env.REACT_APP_NAME)}
         <title>{process.env.REACT_APP_NAME}</title>
       </Helmet>
 
@@ -47,13 +40,14 @@ const App: React.FC = () => {
         <Navigation />
 
         <Switch>
-          <Route path={`${process.env.PUBLIC_URL || ''}/details/:id`} component={Details} />
-          <Route path={process.env.PUBLIC_URL || ''} component={Home} exact />
+          <Route path={`${process.env.PUBLIC_URL || ''}/frases`} component={Frases} />
+          <Route path={`${process.env.PUBLIC_URL || ''}/nova`} component={Home} exact />
+          <Route path={`${process.env.PUBLIC_URL || ''}/gif/:id`} component={Gif} exact />
 
           <Route component={NotFound} />
         </Switch>
 
-        <Footer />
+        {/* <Footer /> */}
       </Wrapper>
     </>
   )

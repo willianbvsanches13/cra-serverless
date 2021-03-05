@@ -4,26 +4,14 @@ import styled from 'styled-components'
 
 const activeClassName = 'active'
 
-const StyledLink = styled(NavLink).attrs({
-  activeClassName,
-})`
-  color: tomato;
-  font-weight: bold;
-  border: 1px solid tomato;
-  border-radius: 3px;
+export const StyledLink = styled(NavLink)`
+  background: blue;
+  color: white;
+  padding: 10px 15px;
+  border: none;
   text-decoration: none;
-  padding: 2px 6px;
-
-  :hover,
-  &:active,
-  &:visited {
-    color: tomato;
-  }
-
-  &.${activeClassName} {
-    color: red;
-  }
-`
+  margin-left: 10px;
+`;
 
 const ListItem = styled.li`
   display: inline-block;
@@ -44,29 +32,25 @@ export const Navigation = () => {
   const location = useLocation()
 
   const isDetailsActive = useCallback(() => {
-    return location.pathname.indexOf('details/') > -1
+    return location.pathname.indexOf('frases/') > -1
   }, [location.pathname])
-
-  const random = Math.random()
-    .toString(36)
-    .substring(2, 15)
 
   return (
     <Wrapper>
       <List>
         <ListItem>
-          <StyledLink to={`${process.env.PUBLIC_URL || ''}`} activeClassName={activeClassName} exact>
-            Home
+          <StyledLink to={`${process.env.PUBLIC_URL || ''}/nova`} activeClassName={activeClassName} exact>
+            Cadastrar Frase
           </StyledLink>
         </ListItem>
 
         <ListItem>
           <StyledLink
-            to={`${process.env.PUBLIC_URL || ''}/details/${random}`}
+            to={`${process.env.PUBLIC_URL || ''}/frases`}
             activeClassName={activeClassName}
             isActive={isDetailsActive}
           >
-            Dynamic
+            Listar Frases
           </StyledLink>
         </ListItem>
       </List>

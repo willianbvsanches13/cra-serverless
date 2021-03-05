@@ -12,8 +12,6 @@ const Wrapper = styled.div`
 
 export const Footer = () => (
   <Wrapper>
-    github.com/
-    <Link href="https://sbstjn.com">sbstjn</Link>/
-    <Link href="https://github.com/sbstjn/cra-serverless">cra-serverless</Link>
+    <Link href="https://github.com/willianbvsanches13/cra-serverless">Repositório do projeto</Link>
   </Wrapper>
 )
