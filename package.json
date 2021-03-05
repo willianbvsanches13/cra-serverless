@@ -2,6 +2,7 @@
   "name": "cra-serverless",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://l7bkl1gfzc.execute-api.sa-east-1.amazonaws.com/prod",
   "dependencies": {
     "koa": "^2.11.0",
     "koa-route": "^3.2.0",
