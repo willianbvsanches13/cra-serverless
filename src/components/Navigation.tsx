@@ -62,7 +62,7 @@ export const Navigation = () => {
 
         <ListItem>
           <StyledLink
-            to={`${process.env.PUBLIC_URL}/prod/details/${random}`}
+            to={`/prod/details/${random}`}
             activeClassName={activeClassName}
             isActive={isDetailsActive}
           >
