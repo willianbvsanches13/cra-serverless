@@ -55,14 +55,14 @@ export const Navigation = () => {
     <Wrapper>
       <List>
         <ListItem>
-          <StyledLink to="/" activeClassName={activeClassName} exact>
+          <StyledLink to="/prod" activeClassName={activeClassName} exact>
             Home
           </StyledLink>
         </ListItem>
 
         <ListItem>
           <StyledLink
-            to={'/details/' + random}
+            to={`${process.env.PUBLIC_URL}/prod/details/${random}`}
             activeClassName={activeClassName}
             isActive={isDetailsActive}
           >
