@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-const headers = new Headers();
-headers.append('Content-Type', 'text/xml')
-
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
