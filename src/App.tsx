@@ -32,9 +32,8 @@ const App: React.FC = () => {
 
   useEffect(() => {
     console.log('env', process.env, location.pathname);
-  }, []);
-  
-  console.log('env w', process.env);
+  }, [location.pathname]);
+
   return (
     <>
       <GlobalStyles />
