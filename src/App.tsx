@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Route, Switch,  } from 'react-router'
+import { useLocation } from 'react-router-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 
 import { Details } from './pages/Details'
@@ -9,7 +10,6 @@ import { Home } from './pages/Home'
 
 import { Footer } from './components/Footer'
 import { Navigation } from './components/Navigation'
-import history from './history';
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -28,10 +28,12 @@ const Wrapper = styled.div`
 `
 
 const App: React.FC = () => {
+  const location = useLocation();
 
   useEffect(() => {
-    console.log('env', process.env, history);
+    console.log('env', process.env, location.pathname);
   }, []);
+  
   console.log('env w', process.env);
   return (
     <>
