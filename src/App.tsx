@@ -47,8 +47,8 @@ const App: React.FC = () => {
         <Navigation />
 
         <Switch>
-          <Route path="/details/:id" component={Details} />
-          <Route path="/" component={Home} exact />
+          <Route path={`${process.env.REACT_APP_NAME || ''}/details/:id`} component={Details} />
+          <Route path={process.env.REACT_APP_NAME || ''} component={Home} exact />
 
           <Route component={NotFound} />
         </Switch>
