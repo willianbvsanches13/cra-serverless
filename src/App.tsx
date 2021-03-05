@@ -38,8 +38,8 @@ const App: React.FC = () => (
       <Navigation />
 
       <Switch>
-        <Route path="/details/:id" component={Details} />
-        <Route path="/" component={Home} exact />
+        <Route path={`${process.env.PUBLIC_URL}/admin/details/:id`} component={Details} />
+        <Route path="/admin" component={Home} exact />
 
         <Route component={NotFound} />
       </Switch>
