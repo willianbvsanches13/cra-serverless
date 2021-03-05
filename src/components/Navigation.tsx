@@ -55,14 +55,14 @@ export const Navigation = () => {
     <Wrapper>
       <List>
         <ListItem>
-          <StyledLink to={`${process.env.REACT_APP_NAME || ''}`} activeClassName={activeClassName} exact>
+          <StyledLink to={`${process.env.PUBLIC_URL || ''}`} activeClassName={activeClassName} exact>
             Home
           </StyledLink>
         </ListItem>
 
         <ListItem>
           <StyledLink
-            to={`${process.env.REACT_APP_NAME || ''}/details/${random}`}
+            to={`${process.env.PUBLIC_URL || ''}/details/${random}`}
             activeClassName={activeClassName}
             isActive={isDetailsActive}
           >
